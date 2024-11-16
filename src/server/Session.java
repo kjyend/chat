@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+import static socket.SocketCloseUtil.closeAll;
+
 public class Session implements Runnable {
 
     private final Socket socket;
