@@ -16,6 +16,13 @@ public class SessionManager {
         sessions.remove(session);
     }
 
+    public synchronized void closeAll() {
+        for (Session session : sessions) {
+            session.close();
+        }
+        sessions.clear();
+    }
+
     public synchronized void sendAll(String message) {
         for (Session session : sessions) {
             try {
