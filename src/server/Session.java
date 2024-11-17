@@ -24,6 +24,7 @@ public class Session implements Runnable {
         this.output = new DataOutputStream(socket.getOutputStream());
         this.commandManager = commandManager;
         this.sessionManager = sessionManager;
+        this.sessionManager.add(this);
     }
 
 
